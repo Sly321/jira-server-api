@@ -1,0 +1,10 @@
+{
+	"[go]": {
+		"editor.defaultFormatter": "golang.go"
+	},
+	"go.goroot": "C:/workspace/software/go/bin",
+	"git.ignoreLimitWarning": true,
+	"go.toolsEnvVars": {
+		"GOROOT": "C:\\workspace\\software\\go"
+	},
+}
