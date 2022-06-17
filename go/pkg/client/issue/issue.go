@@ -5,6 +5,7 @@ import (
 	"fmt"
 	"io/ioutil"
 	"jira-server-api/main/pkg/client/constants"
+	"jira-server-api/main/pkg/util/logging"
 	"jira-server-api/main/pkg/util/rest"
 	"log"
 )
@@ -321,7 +322,9 @@ type Issue struct {
 const ISSUE_API_PATH = "/issue"
 
 func Get(key string) *Issue {
-	response, err := rest.Get(constants.JIRA_REST_URL + ISSUE_API_PATH + "/" + key)
+	url := constants.JIRA_REST_URL + ISSUE_API_PATH + "/" + key
+	response, err := rest.Get(url)
+	logging.D("issue.Get - response.Status: " + response.Status)
 
 	if err != nil {
 		log.Fatal(err.Error())
